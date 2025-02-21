@@ -27,6 +27,10 @@ Once you have downloaded the dataset, update the dataset path in the configurati
 ## Pre-trained model preparation
 
 All pre-trained foundation models can be downloaded from [mmPretrain](https://github.com/open-mmlab/mmpretrain).
+
+## Installation
+Follows the instructions from [MedFM CodeBase](https://github.com/openmedlab/MedFM)
+
 ## File Structure
 ```
 MEDFM/
@@ -70,3 +74,10 @@ MEDFM/
     └── (Contains datasets)
 
 ```
+
+- `configs/`: Configuration files directory, containing configuration files for different datasets.
+- `medfmc/models/`: Models directory, containing dylora_layerwise method, swin_adapter method, and transformers related code.
+- `scripts/`: Scripts directory, containing scripts to run training.
+- `tools/`: Tools directory, containing training scripts.
+- `env/`: Environment directory, containing modified mm library and other dependencies.
+- `data/`: Data directory, containing datasets.
