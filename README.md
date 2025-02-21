@@ -2,11 +2,11 @@
 
 
 ## CodeBase and Installation
-This project is based on the [MedFM CodeBase](https://github.com/openmedlab/MedFM)(MedFM: Foundation Model Prompting for Medical Image Classification Challenge 2023)
-Please follow the instructions from [MedFM CodeBase](https://github.com/openmedlab/MedFM).
+This project is based on the [MedFM CodeBase](https://github.com/openmedlab/MedFM)(MedFM: Foundation Model Prompting for Medical Image Classification Challenge 2023).
 
 It uses the [mmPretrain](https://github.com/open-mmlab/mmpretrain) library to implement various parameter-efficient fine-tuning (PEFT) methods.
 
+Please follow the instructions from [MedFM CodeBase](https://github.com/openmedlab/MedFM).
 
 ## Data Preparation
 
