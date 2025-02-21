@@ -26,7 +26,7 @@ Once you have downloaded the dataset, update the dataset path in the configurati
   
 ## Pre-trained model preparation
 
-
+All pre-trained foundation models can be downloaded from [mmPretrain](https://github.com/open-mmlab/mmpretrain).
 ## File Structure
 ```
 MEDFM/
