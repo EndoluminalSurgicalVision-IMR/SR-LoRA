@@ -15,7 +15,7 @@ Two public datasets are used in our work: [MedFMC](https://medfm2023.grand-chall
 
 
 ## File Structure
-
+```
 MEDFM/
 ├── configs/
 │   └── Vit_VTAB/
@@ -55,3 +55,5 @@ MEDFM/
 │       └── (Contains modified mm library and other dependencies)
 └── data/
     └── (Contains datasets)
+
+```
