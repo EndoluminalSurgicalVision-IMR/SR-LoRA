@@ -80,3 +80,12 @@ MEDFM/
 - `tools/`: Tools directory, containing training scripts.
 - `env/`: Environment directory, containing modified mm library and other dependencies.
 - `data/`: Data directory, containing datasets.
+
+
+## Running Training/Test Scripts
+Use the following command to run the training script:
+```
+bash scripts/run_train_vtab_fewshot.sh
+#or
+bash scripts/run_train_medfm.sh
+```
