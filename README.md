@@ -19,7 +19,7 @@ The few-shot data files are provided in （https://drive.google.com/drive/folder
 
 ### Update Your Configuration File
 
-Once you have downloaded the dataset, update the dataset path in the configuration files (`../configs`) by modifying the following arguments to match your dataset location:
+Once you have downloaded the dataset, update the dataset path in the configuration files (`../configs/xxx.py`) by modifying the following arguments to match your dataset location:
 
 - `data_prefix` – Path to the dataset folder.
 - `ann_file` – Path to the annotation file. 
