@@ -1,10 +1,12 @@
 # SR-LoRA
 
 
-## Code Base
-This project is based on the NeurIPS 2023 - [MedFM: Foundation Model Prompting for Medical Image Classification Challenge 2023](https://github.com/openmedlab/MedFM)
+## CodeBase and Installation
+This project is based on the [MedFM CodeBase](https://github.com/openmedlab/MedFM)(MedFM: Foundation Model Prompting for Medical Image Classification Challenge 2023)
+Please follow the instructions from [MedFM CodeBase](https://github.com/openmedlab/MedFM).
 
 It uses the [mmPretrain](https://github.com/open-mmlab/mmpretrain) library to implement various parameter-efficient fine-tuning (PEFT) methods.
+
 
 ## Data Preparation
 
@@ -27,9 +29,6 @@ Once you have downloaded the dataset, update the dataset path in the configurati
 ## Pre-trained model preparation
 
 All pre-trained foundation models can be downloaded from [mmPretrain](https://github.com/open-mmlab/mmpretrain).
-
-## Installation
-Follows the instructions from [MedFM CodeBase](https://github.com/openmedlab/MedFM)
 
 ## File Structure
 ```
