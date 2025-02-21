@@ -8,8 +8,12 @@ It uses the [mmPretrain](https://github.com/open-mmlab/mmpretrain) library to im
 
 ## Data Preparation
 
-Two public datasets are used in our work: [MedFMC](https://medfm2023.grand-challenge.org/medfm2023/) and [VTAB1k](https://github.com/google-research/task_adaptation?tab=readme-ov-file) (which is also avalibale in GoogleDirve provided by [SSF](https://github.com/dongzelian/SSF))
+### Source datasets
+Two public datasets are used in our work: [MedFMC](https://medfm2023.grand-challenge.org/medfm2023/) and [VTAB1k](https://github.com/google-research/task_adaptation?tab=readme-ov-file) (which is also available in GoogleDirve provided by [SSF](https://github.com/dongzelian/SSF))
  
+### Training/Test sets
+The few-shot data files are provided in （https://drive.google.com/drive/folders/1kHcxEbty9RNn2NLerMOwcq0TQzWJqCO3?usp=share_link）.
+
 
 ## Pre-trained model preparation
 
