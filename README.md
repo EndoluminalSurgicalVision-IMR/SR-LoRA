@@ -2,12 +2,14 @@
 
 
 ## Code Base
-This project is based on the NeurIPS 2023 - (MedFM: Foundation Model Prompting for Medical Image Classification Challenge 2023)[https://github.com/openmedlab/MedFM]
+This project is based on the NeurIPS 2023 - [MedFM: Foundation Model Prompting for Medical Image Classification Challenge 2023](https://github.com/openmedlab/MedFM)
 
-It uses the (mmPretrain)[https://github.com/open-mmlab/mmpretrain] library to implement various parameter-efficient fine-tuning (PEFT) methods.
+It uses the [mmPretrain](https://github.com/open-mmlab/mmpretrain) library to implement various parameter-efficient fine-tuning (PEFT) methods.
 
-## Data preparation
+## Data Preparation
 
+Two public datasets are used in our work: [MedFMC](https://medfm2023.grand-challenge.org/medfm2023/) and [VTAB1k](https://github.com/google-research/task_adaptation?tab=readme-ov-file) (which is also avalibale in GoogleDirve provided by [SSF](https://github.com/dongzelian/SSF))
+ 
 
 ## Pre-trained model preparation
 
