@@ -83,9 +83,13 @@ MEDFM/
 
 
 ## Running Training/Test Scripts
-Use the following command to run the training script:
+Use the following command to run the training/test script:
 ```
 bash scripts/run_train_vtab_fewshot.sh
 #or
 bash scripts/run_train_medfm.sh
+
+bash scripts/run_test_vtab_fewshot.sh
+#or
+bash scripts/run_test_medfm.sh
 ```
