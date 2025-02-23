@@ -36,52 +36,53 @@ MEDFM/
 ├── configs/
 │   └── Vit_VTAB/
 │       └── _base_
-│       └── vit_dylora-layerwise-merge_few_shot/
-│           ├── in21k-vitdylora-layerwise-merge_bs4_lr1e-3_vtab_patch_camelyon.py
-│           └── in21k-vitdylora-layerwise-merge_bs4_lr1e-3_vtab_diabetic_retinopathy.py
+│       └── vit_sr_lora_few_shot/
+│           ├── in21k-vitsr_lora_bs4_lr1e-3_vtab_eurosat.py
+│           └── in21k-vitsr_lora_bs4_lr1e-3_vtab_resisc45.py
 │       ...
 │   └── Vit_MedFM/
 │       └── _base_
-│       └── vit_dylora-layerwise-merge/
-│           ├── in21k-vitdylora-layerwise-merge_bs4_lr1e-3_vtab_1-shot_chest.py
-│           ├── in21k-vitdylora-layerwise-merge_bs4_lr1e-3_vtab_5-shot_chest.py
-│           └── in21k-vitdylora-layerwise-merge_bs4_lr1e-3_vtab_10-shot_chest.py
+│       └── vit_sr_lora/
+│           ├── in21k-vitsr_lora_bs4_lr1e-3_vtab_1-shot_chest.py
+│           ├── in21k-vitsr_lora_bs4_lr1e-3_vtab_5-shot_chest.py
+│           └── in21k-vitsr_lora_bs4_lr1e-3_vtab_10-shot_chest.py
 │           ...
 │       ...
 ├── medfmc/
 │   ├── models/
-│   │   ├── lora_variants
-│   │       ├── vit_dylora_layerwise.py
-│   │       └── vit_melora.py
-│   │       ...
+│   │   ├── lora_variants/
+│   │   │   ├── vit_srlora.py      
+│   │   │   ├── swin_srlora.py     
+│   │   │   ...
 │   │   ├── __init__.py
 │   │   ├── vit_bitfit.py
 │   │   └── vit_adapter.py
-│   │       ...
-│   ├── core
-│   └── datasets
+│   ├── core/
+│   ├── datasets/
+├── utils/                  
+│       └── param_analysis.py              
+        
 ├── scripts/
 │   ├── run_train_medfm.sh
-│   └── run_train_vtab_fewshot.sh
+│   ├── run_train_vtab_fewshot.sh
+│   ├── run_test_medfm_vit.py        
+│   ├── run_test_medfm_swin.py   
+│   └── read_acc_from_vtab.py     
 ├── tools/
+│   ├── our_hooks.py
 │   ├── test.py
 │   └── train.py
-├── env/
-│   └──medfm
-│       └── (Contains modified mm library and other dependencies)
+├── data_backup/
 └── data/
+
     └── (Contains datasets)
-
 ```
-
 - `configs/`: Configuration files directory, containing configuration files for different datasets.
 - `medfmc/models/`: Models directory, containing dylora_layerwise method, swin_adapter method, and transformers related code.
 - `scripts/`: Scripts directory, containing scripts to run training.
 - `tools/`: Tools directory, containing training scripts.
-- `env/`: Environment directory, containing modified mm library and other dependencies.
-- `data/`: Data directory, containing datasets.
-
-
+- `data/`:`data_backup/`: Data directory, containing datasets.
+  
 ## Running Training/Test Scripts
 Use the following command to run the training/test script:
 ```
@@ -89,7 +90,7 @@ bash scripts/run_train_vtab_fewshot.sh
 #or
 bash scripts/run_train_medfm.sh
 
-bash scripts/run_test_vtab_fewshot.sh
+python scripts/run_test_vtab_fewshot.py
 #or
-bash scripts/run_test_medfm.sh
+python scripts/run_test_medfm_fewshot.py
 ```
