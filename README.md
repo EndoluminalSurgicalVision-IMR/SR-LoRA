@@ -94,3 +94,25 @@ python scripts/run_test_vtab_fewshot.py
 #or
 python scripts/run_test_medfm_fewshot.py
 ```
+
+### Some Arguments You May Need to Modify in the Configuration File
+
+1. First, use `utils/get_sr_lora.py` to compute the Stable Rank (SR) of your pre-trained model.  
+2. Then, set the layer-wise lora ranks of the backbone model in the configuration files.
+#### Example Configuration 
+```python
+model = dict(
+    type='ImageClassifier',
+    backbone=dict(
+        type='VitSR_LoRA',
+        lora_ranks=[[9, 10], [25, 35], [44, 54], [70, 78], [78, 86], [84, 94], 
+                    [106, 69], [101, 53], [105, 21], [116, 73], [100, 85], [78, 42]]
+    ),
+    head=dict(
+        type='LinearClsHead',
+        num_classes=5, 
+        in_channels=768,
+        loss=dict(type='CrossEntropyLoss', loss_weight=1.0),
+    )
+)
+
