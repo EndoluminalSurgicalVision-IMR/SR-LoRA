@@ -84,16 +84,19 @@ MEDFM/
 - `data/`:`data_backup/`: Data directory, containing datasets.
   
 ## Running Training/Test Scripts
-Use the following command to run the training/test script:
-```
+Use the following command to run the training script:
+```bash
 bash scripts/run_train_vtab_fewshot.sh
 #or
 bash scripts/run_train_medfm.sh
 
+Use the following command to test:
+
+```bash
 python scripts/run_test_vtab_fewshot.py
 #or
 python scripts/run_test_medfm_fewshot.py
-```
+
 
 ### Some Arguments You May Need to Modify in the Configuration File
 
