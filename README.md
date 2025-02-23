@@ -1,5 +1,5 @@
 # SR-LoRA
-
+This is the official code of SR-LoRA.
 
 ## CodeBase and Installation
 This project is based on the [MedFM CodeBase](https://github.com/openmedlab/MedFM)(MedFM: Foundation Model Prompting for Medical Image Classification Challenge 2023).
@@ -95,7 +95,7 @@ Use the following command to test:
 ```bash
 python scripts/run_test_vtab_fewshot.py
 #or
-python scripts/run_test_medfm_fewshot.py
+python scripts/run_test_medfm.py
 ```
 
 ### Some Arguments You May Need to Modify in the Configuration File
