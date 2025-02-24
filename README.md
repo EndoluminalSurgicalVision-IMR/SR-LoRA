@@ -43,9 +43,9 @@ MEDFM/
 │   └── Vit_MedFM/
 │       └── _base_
 │       └── vit_sr_lora/
-│           ├── in21k-vitsr_lora_bs4_lr1e-3_vtab_1-shot_chest.py
-│           ├── in21k-vitsr_lora_bs4_lr1e-3_vtab_5-shot_chest.py
-│           └── in21k-vitsr_lora_bs4_lr1e-3_vtab_10-shot_chest.py
+│           ├── in21k-vitsr_lora_bs4_lr1e-3_1-shot_chest.py
+│           ├── in21k-vitsr_lora_bs4_lr1e-3_5-shot_chest.py
+│           └── in21k-vitsr_lora_bs4_lr1e-3_10-shot_chest.py
 │           ...
 │       ...
 ├── medfmc/
@@ -60,8 +60,8 @@ MEDFM/
 │   ├── core/
 │   ├── datasets/
 ├── utils/                  
-│       └── param_analysis.py              
-        
+│       └── get_stable_rank.py              
+|       
 ├── scripts/
 │   ├── run_train_medfm.sh
 │   ├── run_train_vtab_fewshot.sh
@@ -73,15 +73,16 @@ MEDFM/
 │   ├── test.py
 │   └── train.py
 ├── data_backup/
+|            └──(Contains few-shot train/val split files)
 └── data/
 
     └── (Contains datasets)
 ```
 - `configs/`: Configuration files directory, containing configuration files for different datasets.
-- `medfmc/models/`: Models directory, containing dylora_layerwise method, swin_adapter method, and transformers related code.
+- `medfmc/models/`: Models directory, containing PEFT method, and transformer backbones.
 - `scripts/`: Scripts directory, containing scripts to run training.
 - `tools/`: Tools directory, containing training scripts.
-- `data/`:`data_backup/`: Data directory, containing datasets.
+- `data/`:`data_backup/`: Data directory, containing datasets and train/val split files.
   
 ## Running Training/Test Scripts
 Use the following command to run the training script:
