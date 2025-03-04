@@ -8,7 +8,7 @@ It uses the [mmPretrain](https://github.com/open-mmlab/mmpretrain) library to im
 
 Please follow the instructions from [MedFM CodeBase](https://github.com/openmedlab/MedFM).
 
-## Data Preparation
+## Data and Pre-trained Model Preparation
 
 ### Source datasets
 
@@ -18,17 +18,20 @@ Two public datasets are used in our work: [MedFMC](https://medfm2023.grand-chall
 
 The few-shot data files are provided in （https://drive.google.com/drive/folders/1kHcxEbty9RNn2NLerMOwcq0TQzWJqCO3?usp=share_link）.
 
-
-### Update Your Configuration File
-
-Once you have downloaded the dataset, update the dataset path in the configuration files (`../configs/xxx.py`) by modifying the following arguments to match your dataset location:
-
-- `data_prefix` – Path to the dataset folder.
-- `ann_file` – Path to the annotation file. 
   
 ## Pre-trained model preparation
 
 All pre-trained foundation models can be downloaded from [mmPretrain](https://github.com/open-mmlab/mmpretrain).
+
+
+### Update Your Configuration File
+
+Once you have downloaded the datasets and pretrained models, update the following arguments in the configuration files (`../configs/xxx.py`) to match your dataset/model location:
+
+- `data_prefix` – Path to the dataset folder.
+- `ann_file` – Path to the annotation file.
+- `load_from` – Path to the pretrained checkpoint.
+
 
 ## File Structure
 ```
