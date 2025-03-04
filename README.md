@@ -10,16 +10,16 @@ Please follow the instructions from [MedFM CodeBase](https://github.com/openmedl
 
 ## Data and Pre-trained Model Preparation
 
-### Source datasets
+### Datasets
 
 Two public datasets are used in our work: [MedFMC](https://medfm2023.grand-challenge.org/medfm2023/) and [VTAB1k](https://github.com/google-research/task_adaptation?tab=readme-ov-file) (which is also available in GoogleDirve provided by [SSF](https://github.com/dongzelian/SSF))
  
-### Training/Test sets
+### Training/Test splitting
 
 The few-shot data files are provided in （https://drive.google.com/drive/folders/1kHcxEbty9RNn2NLerMOwcq0TQzWJqCO3?usp=share_link）.
 
   
-### Pre-trained model preparation
+### Pre-trained models
 
 All pre-trained foundation models can be downloaded from [mmPretrain](https://github.com/open-mmlab/mmpretrain).
 
