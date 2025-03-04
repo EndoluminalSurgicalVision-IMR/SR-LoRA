@@ -606,7 +606,7 @@ class SwinTransformerSR_LoRA(SwinTransformer):
 
     def __init__(
         self,
-        lora_ranks = None,
+        lora_ranks=None,
         frozen=True,
         arch='base',
         img_size=224,
