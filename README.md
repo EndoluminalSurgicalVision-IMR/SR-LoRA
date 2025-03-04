@@ -19,7 +19,7 @@ Two public datasets are used in our work: [MedFMC](https://medfm2023.grand-chall
 The few-shot data files are provided in （https://drive.google.com/drive/folders/1kHcxEbty9RNn2NLerMOwcq0TQzWJqCO3?usp=share_link）.
 
   
-## Pre-trained model preparation
+### Pre-trained model preparation
 
 All pre-trained foundation models can be downloaded from [mmPretrain](https://github.com/open-mmlab/mmpretrain).
 
