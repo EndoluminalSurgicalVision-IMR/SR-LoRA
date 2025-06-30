@@ -123,3 +123,14 @@ model = dict(
     )
 )
 
+Citation:
+```bibtex
+@article{zhang2025beyond,
+  title={Beyond Low-Rank Tuning: Model Prior-Guided Rank Allocation for Effective Transfer in Low-Data and Large-Gap Regimes},
+  author={Zhang, Chuyan and Wang, Kefan and Gu, Yun},
+  journal={IEEE International Conference on Computer Vision (ICCV)},
+  year={2025},
+  publisher={IEEE}
+}
+```
+
