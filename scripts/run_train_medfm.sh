@@ -20,7 +20,7 @@ for n_shot in "${n_shots[@]}"; do
     for dataset in "${datasets[@]}"; do
         echo "*********Run train for : ${n_shot}-shot-${dataset}*********"
   
-        config_file="configs/Vit_MedFM/vit_srlora/in21k-vitsrlora_bs4_lr1e-3_${n_shot}-shot_${dataset}.py"
+        config_file="configs/Vit_MedFM/vit_ssrlora/in21k-vitssrlora_bs4_lr1e-3_${n_shot}-shot_${dataset}.py"
        
         train_command_map="python tools/train.py $config_file --seed 666"
         
