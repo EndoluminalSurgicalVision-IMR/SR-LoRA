@@ -20,6 +20,8 @@ from medfmc.models.lora_variants.vit_moslora import VitMoSLoRA
 from medfmc.models.lora_variants.vit_spu import VitSPU_LoRA
 from medfmc.models.lora_variants.vit_srlora import VitSR_LoRA
 from medfmc.models.lora_variants.swin_srlora import SwinTransformerSR_LoRA
+from medfmc.models.lora_variants.vit_ssrlora import VitSSR_LoRA
+from medfmc.models.lora_variants.swin_ssrlora import SwinTransformerSSR_LoRA
 
 __all__ = [
     'PromptedVisionTransformer', 
@@ -37,6 +39,7 @@ __all__ = [
     'VitMoSLoRA',
     'VitSPU_LoRA',
     'VitSR_LoRA',
+    'VitSSR_LoRA',
     'MedFMC_SwinTransformer',
     'PromptedSwinTransformer',
     'SwinTransformerLoRA',
@@ -45,5 +48,7 @@ __all__ = [
     'SwinTransformerSSF',
     'SwinTransformer_Bitfit', 
     'Swin_Bitfit',
-    'SwinTransformerSR_LoRA'
+    'SwinTransformerSR_LoRA',
+    'SwinTransformerSSR_LoRA'
 ]
+
