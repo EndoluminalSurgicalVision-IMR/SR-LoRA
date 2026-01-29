@@ -16,15 +16,9 @@ for n_shot in n_shots:
     for dataset in datasets:
         print(f"*********Run test for : {n_shot}-shot-{dataset}*********")
 
-        # config_file = f"work_dirs/vit_alignln/in21k-vit{method}_bs4_lr0.001_{n_shot}-shot_{dataset}/in21k-vit{method}_bs4_lr1e-3_{n_shot}-shot_{dataset}.py"
-        
-
         config_file = f"work_dirs/vit_{method}/in21k-vit{method}_bs4_lr0.001_{n_shot}-shot_{dataset}/in21k-vit{method}_bs4_lr1e-3_{n_shot}-shot_{dataset}.py"
       
-      
         model_dir = f"work_dirs/vit_{method}/in21k-vit{method}_bs4_lr0.001_{n_shot}-shot_{dataset}/"
-       
-        # model_dir = f"work_dirs/vit_{method}/in21k-vit{method}_bs4_lr0.001_{n_shot}-shot_{dataset}/"
        
         model_files = [file for file in os.listdir(model_dir) if "best" in file]
 
@@ -83,5 +77,6 @@ for n_shot in n_shots:
                 config_content = file.readlines()
                 last_line = config_content[-1]
                 print(last_line)
+
 
 
