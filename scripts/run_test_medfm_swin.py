@@ -12,7 +12,7 @@ n_shots = ["1", "5", "10"]
 test_sets = ['val_WithLabel']
 datasets = ["chest","colon","endo"]
 base_dir = 'work_dirs/exp1/'
-method = 'sandln'
+method = 'lora'
 
 for n_shot in n_shots:
     for dataset in datasets:
