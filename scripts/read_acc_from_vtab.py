@@ -3,7 +3,7 @@ from statistics import mean
 import csv 
 
 # Base directory where the folders are located
-base_dir = 'work_dirs/vitlarge_dylora_layerwise_merge-vtab-few-shot'
+base_dir = '$Base directory where the log folders are located$'
 print(os.listdir(base_dir))
 
 # Function to extract the last Best accuracy_top-1 from a log file
