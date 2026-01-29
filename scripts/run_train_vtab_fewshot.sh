@@ -30,7 +30,7 @@ for dataset in "${datasets[@]}"; do
     echo "*********Run train for : ${dataset}*********"
 
     # Base config file path
-    base_config_file="configs/Vit_VTAB/vit_srlora_few_shot/in21k-vitsrlora_bs4_lr5e-1_vtab_${dataset}.py"
+    base_config_file="configs/Vit_VTAB/vit_ssrlora_few_shot/in21k-vitssrlora_bs4_lr5e-1_vtab_${dataset}.py"
 
     
 
@@ -48,7 +48,7 @@ for dataset in "${datasets[@]}"; do
         few_shot_file="few_shot_exps/train_${n_shot}-shot_exp${exp}.txt"
 
         # Temporary config file for this experiment
-        temp_config_file="configs/Vit_VTAB/vit_srlora_few_shot/in21k-vitsrlora_bs4_lr5e-1_vtab_${dataset}_exp${exp}.py"
+        temp_config_file="configs/Vit_VTAB/vit_ssrlora_few_shot/in21k-vitssrlora_bs4_lr5e-1_vtab_${dataset}_exp${exp}.py"
 
         # Copy base config file to temporary config file
         cp $base_config_file $temp_config_file
