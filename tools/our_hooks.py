@@ -255,3 +255,38 @@ class swin_srloraHook(Hook):
         # Set the new rank in the model
         model.set_ranks(all_new_ranks, frozen=model.frozen)
         print("Setting rank complete")
+        
+
+@HOOKS.register_module()
+class vit_ssrloraHook(Hook):
+    """Shapley-Guided Progressive Column-Selection LoRA Hook."""
+
+    def __init__(self):
+        self._initialized = False
+        self.val_loader = None
+
+    def before_train_epoch(self, runner):
+        model = runner.model
+        backbone = model.module.backbone if hasattr(model.module, 'backbone') else model.backbone
+        backbone.init_psm_lora()
+        self._initialized = True
+
+    def before_train_iter(self, runner):
+        if not self._initialized:
+            runner.logger.warning('Hook not initialized, skipping before_train_iter.')
+            return
+        model = runner.model
+        backbone = model.module.backbone if hasattr(model.module, 'backbone') else model.backbone
+        total_iters = runner.max_iters
+        cur_iter = runner.iter + 1
+
+        p = min(4 * cur_iter / (3 * total_iters), 1.0)
+        backbone.psm_cur_p = p
+        
+        for lora_layer in backbone.psm_lora_layers:
+            r = lora_layer.r
+            p_i = np.full(r, p)
+            mask = np.random.binomial(1, p_i).astype(np.float32)
+            if mask.sum() == 0:
+                mask[np.random.randint(0, r)] = 1.0
+            lora_layer.set_psm_mask(mask)
