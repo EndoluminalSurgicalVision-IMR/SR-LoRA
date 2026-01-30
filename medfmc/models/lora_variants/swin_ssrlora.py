@@ -534,7 +534,6 @@ class SwinTransformerSSR_LoRA(SwinTransformer):
 
     def __init__(
         self,
-        frozen=True,
         arch='base',
         img_size=224,
         patch_size=4,
@@ -568,14 +567,6 @@ class SwinTransformerSSR_LoRA(SwinTransformer):
         #     [[23,47],[28,54],[41,59],[43,57],[51,47],[47,38],[43,41],[37,42],[35,46],[33,46],[34,52],[34,50],[37,59],[37,65],[39,53],[38,65],[37,65],[36,11]],
         #     [[43,18],[45,9]]
         # ]
-        #for swin-l:
-        # self.lora_ranks = [
-        #       [[5,21],[18,23]],
-        #       [[31,47],[44,55]],
-        #       [[40,66],[54,70],[75,75],[63,67],[83,78],[79,72],[77,81],[76,78],[75,87],[69,80],[78,85],[73,88],[84,92],[82,98],[89,95],[85,100],[90,99],[91,54]],
-        #       [[109,35],[119,14]]
-        # ]
-        self.frozen = frozen
         
         super().__init__(arch=arch)
         self.avgpool = nn.AdaptiveAvgPool1d(1)
