@@ -3,12 +3,10 @@ This is the official code for **SR-LoRA** and its extension **SSR-LoRA**.
 
 ## 📢 Major Update: From SR-LoRA to SSR-LoRA
 
-This repository now supports both:
+This repository now supports both: 
 
-* 
-**SR-LoRA (Prior):** Uses the **Stable Rank** of pre-trained weights as a structural prior to adaptively allocate layer-wise rank constraints.
+**SR-LoRA (Prior):** Uses the **Stable Rank** of pre-trained weights as a structural prior to adaptively allocate layer-wise rank constraints. 
 
-* 
 **SSR-LoRA (Prior + Posterior):** Introduces a **Shapley Value** optimized posterior mechanism by modeling fine-tuning as a cooperative game to implicitly maximize the marginal contribution of each rank dimension.
 
 ## CodeBase and Installation
