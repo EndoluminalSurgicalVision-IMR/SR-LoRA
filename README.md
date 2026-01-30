@@ -1,5 +1,15 @@
-# SR-LoRA
-This is the official code of SR-LoRA.
+# SR-LoRA / SSR-LoRA
+This is the official code for **SR-LoRA** and its extension **SSR-LoRA**.
+
+## 📢 Major Update: From SR-LoRA to SSR-LoRA
+
+This repository now supports both:
+
+* 
+**SR-LoRA (Prior):** Uses the **Stable Rank** of pre-trained weights as a structural prior to adaptively allocate layer-wise rank constraints.
+
+* 
+**SSR-LoRA (Prior + Posterior):** Introduces a **Shapley Value** optimized posterior mechanism by modeling fine-tuning as a cooperative game to implicitly maximize the marginal contribution of each rank dimension.
 
 ## CodeBase and Installation
 This project is based on the [MedFM CodeBase](https://github.com/openmedlab/MedFM)(MedFM: Foundation Model Prompting for Medical Image Classification Challenge 2023).
@@ -39,23 +49,29 @@ MEDFM/
 ├── configs/
 │   └── Vit_VTAB/
 │       └── _base_
-│       └── vit_sr_lora_few_shot/
+│       └── vit_sr_lora_few_shot/                              # SR-LoRA configs for VTAB
 │           ├── in21k-vitsr_lora_bs4_lr1e-3_vtab_eurosat.py
 │           └── in21k-vitsr_lora_bs4_lr1e-3_vtab_resisc45.py
+│       └── vit_ssr_lora_few_shot/                             # SSR-LoRA configs for VTAB [New]
+│           ...
 │       ...
 │   └── Vit_MedFM/
 │       └── _base_
-│       └── vit_sr_lora/
+│       └── vit_sr_lora/                                       # SR-LoRA configs for MedFM
 │           ├── in21k-vitsr_lora_bs4_lr1e-3_1-shot_chest.py
 │           ├── in21k-vitsr_lora_bs4_lr1e-3_5-shot_chest.py
 │           └── in21k-vitsr_lora_bs4_lr1e-3_10-shot_chest.py
+│           ...
+│       └── vit_ssr_lora/                                      # SSR-LoRA configs for MedFM [New]
 │           ...
 │       ...
 ├── medfmc/
 │   ├── models/
 │   │   ├── lora_variants/
 │   │   │   ├── vit_srlora.py      
-│   │   │   ├── swin_srlora.py     
+│   │   │   ├── swin_srlora.py
+│   │   │   ├── vit_ssrlora.py           # ViT SSR-LoRA Implementation [NEW]
+│   │   │   └── swin_ssrlora.py          # Swin variant for SSR-LoRA [NEW]     
 │   │   │   ...
 │   │   ├── __init__.py
 │   │   ├── vit_bitfit.py
@@ -88,6 +104,26 @@ MEDFM/
 - `data/`:`data_backup/`: Data directory, containing datasets and train/val split files.
   
 ## Running Training/Test Scripts
+### Switching Between SR-LoRA and SSR-LoRA
+
+You can toggle between the methods by modifying the `config_file` path in the `.sh` scripts, e.g.,
+
+**To run SR-LoRA:**
+
+```bash
+config_file="configs/Vit_MedFM/vit_srlora/in21k-vitsrlora_bs4_lr1e-3_${n_shot}-shot_${dataset}.py"
+
+```
+
+**To run SSR-LoRA:**
+
+```bash
+config_file="configs/Vit_MedFM/vit_ssrlora/in21k-vitssrlora_bs4_lr1e-3_${n_shot}-shot_${dataset}.py"
+
+```
+
+### Usage
+
 Use the following command to run the training script:
 ```bash
 bash scripts/run_train_vtab_fewshot.sh
@@ -111,7 +147,8 @@ python scripts/run_test_medfm.py
 model = dict(
     type='ImageClassifier',
     backbone=dict(
-        type='VitSR_LoRA',
+        # type='VitSR_LoRA',
+        type='VitSSR_LoRA',
         lora_ranks=[[9, 10], [25, 35], [44, 54], [70, 78], [78, 86], [84, 94], 
                     [106, 69], [101, 53], [105, 21], [116, 73], [100, 85], [78, 42]]
     ),
