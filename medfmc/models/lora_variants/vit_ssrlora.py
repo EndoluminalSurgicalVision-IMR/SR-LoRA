@@ -259,11 +259,12 @@ class TransformerEncoderLayer(BaseModule):
 class VitSSR_LoRA(VisionTransformer):
 
     def __init__(self,
+                 lora_ranks=None,
                  *args,
                  **kwargs):
         super().__init__(*args, **kwargs)
         # for imagnet21k
-        self.lora_ranks = [
+        default_lora_ranks = [
         [9, 10],
         [25, 35],
         [44, 54],
@@ -278,7 +279,7 @@ class VitSSR_LoRA(VisionTransformer):
         [78, 42]
     ]
     # for dino
-        # self.lora_ranks = [[7, 5],
+        # default_lora_ranks = [[7, 5],
         #                    [19, 18], 
         #                    [33, 16], 
         #                    [61, 33], 
@@ -291,7 +292,7 @@ class VitSSR_LoRA(VisionTransformer):
         #                    [130, 27], 
         #                    [153, 27]]
     # for MAE
-        # self.lora_ranks = [
+        # default_lora_ranks = [
         #     [7, 9],
         #     [17, 54],
         #     [27, 77],
@@ -306,7 +307,7 @@ class VitSSR_LoRA(VisionTransformer):
         #     [106, 43]
         # ]
     # #for imagenet large
-    #     self.lora_ranks =[
+    #     default_lora_ranks = [
     #         [7, 5],
     #         [15, 22],
     #         [19, 44],
@@ -334,7 +335,7 @@ class VitSSR_LoRA(VisionTransformer):
     #         ]
         
     # #for large mae:
-        # self.lora_ranks = [
+        # default_lora_ranks = [
         #     [12,3],
         #     [38,35],
         #     [44,64],
@@ -361,7 +362,7 @@ class VitSSR_LoRA(VisionTransformer):
         #     [104,34],
         # ]            
     #for large dino:
-        # self.lora_ranks = [
+        # default_lora_ranks = [
         #     [4,56],
         #     [20,55],
         #     [29,75],
@@ -388,7 +389,7 @@ class VitSSR_LoRA(VisionTransformer):
         #     [79,27]
         # ]
     # #for full:
-    #     self.lora_ranks = [ 
+    #    default_lora_ranks = [ 
     #         [768,768],
     #         [768,768],
     #         [768,768],
@@ -402,7 +403,7 @@ class VitSSR_LoRA(VisionTransformer):
     #         [768,768],
     #         [768,768]
     #     ]
-
+        self.lora_ranks = lora_ranks if lora_ranks is not None else default_lora_ranks
         self.layers = ModuleList()
         for i in range(self.num_layers):
             _layer_cfg = dict(
