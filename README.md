@@ -158,6 +158,10 @@ model = dict(
     )
 )
 
+custom_hooks = [
+    # dict(type='vit_srloraHook')
+    dict(type='SSRLoRAHook')
+]
 
 ```
 Citation:
